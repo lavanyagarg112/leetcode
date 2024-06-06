@@ -1,6 +1,6 @@
 # Container with Most Water
 
-# Status: IN PROGRESS
+# Status: WRONG
 
 # Understanding the problem:
 
@@ -34,7 +34,7 @@ But in this case we need to keep track of the prev in terms of the height, as we
 
 '''
 
-# Coding attempt
+# Coding attempt 1
 
 def maxArea(height):
 
@@ -103,4 +103,11 @@ Core issue identified:
 in subarray [2,3,10,5,7]
 the max should be 10 -> 7 = 14
 instead as per my algorithm it is 2 -> 7 which is 8
+'''
+
+# SEEMS LIKE I AM 100% WRONG
+
+'''
+Requires 2 pointer approach
+To learn: when to use 2 pointer?    
 '''
