@@ -18,27 +18,32 @@ need to find the first false
 or the first true if we look at it the other way round
 '''
 
-def findMin(nums):
 
-    ans = nums[0]
+class Solution(object):
+    def findMin(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
 
-    begin = 0
-    end = len(nums) - 1
+        ans = nums[0]
 
-    while begin <= end:
-        mid = begin + (end - begin)//2
-        startNum = nums[begin]
-        endNum = nums[end]
+        begin = 0
+        end = len(nums) - 1
 
-        if nums[mid] < ans:
-            ans = nums[mid]
+        while begin <= end:
+            mid = begin + (end - begin)//2
+            startNum = nums[begin]
+            endNum = nums[end]
 
-        if nums[mid] >= startNum and nums[mid] >= endNum: # can simply do nums[mid] >= endNum cause if it is >= endNum, it has to be >= startNum
-            begin = mid + 1
+            if nums[mid] < ans:
+                ans = nums[mid]
 
-        else:
-            end = mid - 1
+            if nums[mid] >= startNum and nums[mid] >= endNum: # can simply do nums[mid] >= endNum cause if it is >= endNum, it has to be >= startNum
+                begin = mid + 1
 
-    return ans
+            else:
+                end = mid - 1
 
-print(findMin([11,13,15,17]))
+        return ans
+        
