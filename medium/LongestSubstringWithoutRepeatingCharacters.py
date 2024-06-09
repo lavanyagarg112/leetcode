@@ -13,9 +13,16 @@ def lengthOfLongestSubstring(s):
         if i in prev:
             if len(prev) > len(longestSubString):
                 longestSubString = prev
+            for j in range(len(prev)):
+                if prev[j] == i:
+                    break
+            prev = prev[j+1:] + i
+            
         else:
             prev += i
 
     return max(len(prev),len(longestSubString))
 
-print(lengthOfLongestSubstring("dvdf")) # fails for this
+print(lengthOfLongestSubstring("dvdf"))
+
+# need to figure out how to do better
